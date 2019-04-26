@@ -4,12 +4,14 @@ const cookieParser = require('cookie-parser')
 const mongoose = require('mongoose')
 const AuthRoutes = require('./express/routes/auth')
 
-mongoose.connect(/* INSERT DB CONNECTION */)
+mongoose.connect(
+  'mongodb+srv://Andy:REtMKLmjn35lcbDo@devconnector-zqgeg.mongodb.net/test?retryWrites=true'
+)
 
 const port = process.env.PORT || 4001
 const app = express()
 
-if (process.env.NODE_ENV === "production") {
+if (process.env.NODE_ENV === 'production') {
   app.use(express.static('client/build'))
 }
 
